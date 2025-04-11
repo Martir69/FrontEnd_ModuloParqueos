@@ -1,0 +1,390 @@
+/* Contenedor principal */ 
+.contenedor {
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+/* Plano completo - disposición horizontal */
+.planoCompleto {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+  align-items: stretch; /* Fuerza que las secciones tengan la misma altura */
+}
+
+/* Contenedores de sección */
+.seccionContainer {
+  border: 2px solid #2c3e50;
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* Posicionamiento específico: ajustado para 15% - 70% - 15% */
+.left {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea al inicio verticalmente */
+}
+
+.center {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea al inicio verticalmente */
+}
+
+.right {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea al inicio verticalmente */
+}
+
+/* Títulos de sección */
+.tituloSeccion {
+  background: #2c3e50;
+  color: white;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.contenidoSeccion {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Centrar verticalmente el contenido de la sección de Visitas */
+.contenidoSeccion {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Centra verticalmente */
+  align-items: center;        /* Centra horizontalmente si se desea */
+}
+
+/* Estilos para columnas paralelas */
+.columnasConEspacio {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.columnaVertical {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.espacioEntreColumnas {
+  width: 15px;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    #f0f0f0 5px,
+    #f0f0f0 10px
+  );
+}
+
+/* Estilos para estudiantes */
+.gridEstudiantes {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.espacioHorizontal {
+  height: 20px;
+  width: 100%;
+  margin: 10px 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 1px,
+    #f0f0f0 5px,
+    #f0f0f0 10px
+  );
+}
+
+/* Celdas de parqueo */
+.celda {
+  width: 45px;
+  height: 45px;
+  border: 2px solid #95a5a6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: bold;
+  font-size: 0.7rem;
+  background: white;
+}
+
+.celda:hover {
+  transform: scale(1.05);
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Estados */
+.libre {
+  background: #e8f5e9;  /* Verde claro sólido */
+  border-color: #27ae60;
+}
+
+.ocupado {
+  background: #ffebee;   /* Rojo claro sólido */
+  border-color: #e74c3c;
+}
+
+.indisponible {
+  background: #f5f5f5;
+  border-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Número de parqueo */
+.numero {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 0.6rem;
+  color: #34495e;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  font-size: 0.8rem;
+  min-width: 140px;
+  text-align: center;
+}
+
+.tooltip div {
+  margin: 3px 0;
+}
+
+.botonCancelar {
+  margin-top: 5px;
+  padding: 4px 8px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  transition: background 0.2s;
+}
+
+.botonCancelar:hover {
+  background: #c0392b;
+}
+
+.botonReservar {
+  margin-top: 5px;
+  padding: 4px 8px;
+  background: #1bbc33;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  transition: background 0.2s;
+}
+
+.botonReservar:hover {
+  background: #1bbc33;
+}
+
+/* Leyenda */
+.leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  background: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.leyenda h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #2c3e50;
+  width: 100%;
+}
+
+.leyenda div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+.ejemplo {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 2px;
+}
+
+/* Modal */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  width: 90%;
+  max-width: 350px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modalContent h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.modalFormGroup {
+  margin-bottom: 15px;
+}
+
+.modalFormGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #34495e;
+}
+
+.modalFormGroup input {
+  width: 100%;
+  padding: 8px 5px;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modalCancel {
+  background: #e0e0e0;
+  color: #2c3e50;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modalCancel:hover {
+  background: #d0d0d0;
+}
+
+.modalConfirm {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modalConfirm:hover {
+  background: #2980b9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .planoCompleto {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .left, .center, .right {
+    width: 100%;
+    align-items: center; /* Opcional: centra en móvil */
+  }
+
+  .columnasConEspacio {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .espacioEntreColumnas {
+    height: 15px;
+    width: 100%;
+  }
+
+  .columnaVertical {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  
+}

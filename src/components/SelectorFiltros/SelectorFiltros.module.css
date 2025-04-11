@@ -1,0 +1,78 @@
+
+/* Estilo minimalista pero estructurado */
+.contenedor {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .grupo {
+    flex: 1;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #2d3748;
+    font-weight: 500;
+  }
+  
+  .select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 1rem;
+    color: #1a202c;
+  }
+  
+  /* Estilo para la visualización de parqueos */
+  .parqueos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .parqueo-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .parqueo-numero {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .parqueo-estado {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .ocupado {
+    background-color: #fee2e2;
+    color: #dc2626;
+  }
+  
+  .disponible {
+    background-color: #dcfce7;
+    color: #16a34a;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
